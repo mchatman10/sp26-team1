@@ -1,2 +1,1 @@
-# sp26-project-template
-Michael Chatman
+Zachary Fouts
