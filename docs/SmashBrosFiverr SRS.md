@@ -1,117 +1,96 @@
 
 # Requirements – Starter Template
 
-**Project Name:** Your App Name \
-**Team:** Names and roles \
-**Course:** CSC 340\
-**Version:** 1.0\
-**Date:** 2026-01-30
+**Project Name:** Super Smart Bros.
+**Team:** Zachary Fouts (Provider), Michael Chatman (User)
+**Course:** CSC-340-02
+**Version:** 1.0
+**Date:** 2026-02-13
 
 ---
 
 ## 1. Overview
-**Vision.** One or two sentences: who this is for, the core problem, and the outcome.
+**Vision.** This app is created for expanding the competitive Super Smash Bros. scene by providing users with the resources to improve at the game, even at a casual level. This app is meant to be for anyone looking to improve at Super Smash Bros and be more involved with its community.
 
 **Glossary** Terms used in the project
-- **Term 1:** description.
-- **Term 2:** description
+- **Term 1:** Player - The user who plays Super Smash Bros. and is looking for the services this app helps facilitate
+- **Term 2:** Coach - The provider who helps teach Super Smash Bros. in order to gift their skills to the future player base
+- **Term 3:** Bio - a summary of the person and their experience with Super Smash Bros. to tell the user more about the coach they might be requesting services from
 
 **Primary Users / Roles.**
-- **Customer (e.g., Student/Patient/Pet Owner/etc. )** — 1 line goal statement.
-- **Provider (e.g., Teacher/Doctor/Pet Sitter/etc. )** — 1 line goal statement.
-- **SysAdmin (optional)** — 1 line goal statement.
+- **Customer (Player)** — Be able to purchase coaching services from providers with the end goal of improving at Super Smash Bros.
+- **Provider (Coach)** Be able to provide coaching services to players interested in improving at Super Smash Bros.
 
 **Scope (this semester).**
-- <capability 1>
-- <capability 2>
-- <capability 3>
+- <capability 1> Browse and filter through different coaching posts
+- <capability 2> purchase coaching and unlock messaging to the provider
+- <capability 3> Write reviews on coaches with a 5 star system for users to use
+- <capability 4> Read user reviews and provide further messages/feedback as needed
 
 **Out of scope (deferred).**
-- <deferred 1>
-- <deferred 2>
+- <deferred 1> international coaching and app usage
+- <deferred 2> time scheduling within the app to speed up the process
 
 > This document is **requirements‑level** and solution‑neutral; design decisions (UI layouts, API endpoints, schemas) are documented separately.
 
 ---
 
 ## 2. Functional Requirements (User Stories)
-Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`.** Each story includes at least one **Given/When/Then** scenario.
 
 ### 2.1 Customer Stories
-- **US‑CUST‑001 — <short title>**  
-  _Story:_ As a customer, I want … so that …  
+- **US‑CUST‑001 — <Account Registration>**  
+  _Story:_ As a customer, I want to sign up for an account so that I can search and pay for coaching sessions
   _Acceptance:_
   ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
+  Scenario: <player creates an account>
+    Given Player does not have an account
+    When  Proper fields are filled out in the account creation
+    Then  the player's account is created and stored in the system
   ```
 
-- **US‑CUST‑002 — <short title>**  
-  _Story:_ As a customer, I want … so that …  
+- **US‑CUST‑002 — <Browsing>**  
+  _Story:_ As a customer, I want to browse coaching sessions so that I can purchase one and plan the session through messages
   _Acceptance:_
   ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
+  Scenario: <player filters through coaching posts and selects a preferrable one>
+    Given a player is searching for a coaching session through the app
+    When  a coaching session is filtered through and found
+    Then  Player can click on the coaching post in order to purchase it
   ```
 
 ### 2.2 Provider Stories
-- **US‑PROV‑001 — <short title>**  
-  _Story:_ As a provider, I want … so that …  
+- **US‑PROV‑001 — <Profile Creation>**  
+  _Story:_ As a provider, I want to create a profile for myself so that players can pick me if I'm a good fit for the coaching they're looking for
   _Acceptance:_
   ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
+  Scenario: <provider creates profile that gets posted to app>
+    Given Profile/Bio is not created
+    When  Profile and Bio are created with proper filter keywords
+    Then  the Profile/Bio is visible within the app and can be managed and purchased
   ```
 
-- **US‑PROV‑002 — <short title>**  
-  _Story:_ As a provider, I want … so that …  
+- **US‑PROV‑002 — <Review Viewing>>**  
+  _Story:_ As a provider, I want to read and respond to reviews so that my name isn't slandered and I can improve on my coaching and make it better for everyone so I can provide more
   _Acceptance:_
   ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
+  Scenario: <reviews can be responded to and viewed publicly>
+    Given a user posts a review on a coach's profile
+    When  the review is posted
+    Then  I can see and/or respond to the review to provide more insight on said review
   ```
-
-### 2.3 SysAdmin Stories
-- **US‑ADMIN‑001 — <short title>**  
-  _Story:_ As a sysadmin, I want … so that …  
-  _Acceptance:_
-  ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
-  ```
-
-- **US‑ADMIN‑002 — <short title>**  
-  _Story:_ As a sysadmin, I want … so that …  
-  _Acceptance:_
-  ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
-  ```
-
----
 
 ## 3. Non‑Functional Requirements (make them measurable)
-- **Performance:** description 
-- **Availability/Reliability:** description
-- **Security/Privacy:** description
-- **Usability:** description
+- **Performance:** 90% of discovery responses in less than 1.5 seconds; 85% of page details in under 1 second on a typical load
+- **Availability/Reliability:** 99% uptime (maintinence excluded); basic reloads for load failure
+- **Security/Privacy:** fully encrypted and stored passwords; possible 2FA usage
+- **Usability:** New users complete first coaching purchase in less than 5 minutes in hallway tests
 
 ---
 
 ## 4. Assumptions, Constraints, and Policies
-- list any rules, policies, assumptions, etc.
+- Modern Browsers; stable connectivity and adaptive usage
+- Course timeline & campus infrastructure constraints apply.
+- Policies: reviews allowed within 1 week of end of coaching session; content guidelines (highlight respectfulness and being constructive instead of mean); cancellation policies if terms violated; capacity rule in case of overbooking
 
 ---
 
