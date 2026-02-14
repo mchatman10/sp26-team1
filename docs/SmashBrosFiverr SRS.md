@@ -1,10 +1,7 @@
-
-# Requirements – Starter Template
-
 **Project Name:** Super Smart Bros.
 **Team:** Zachary Fouts (Provider), Michael Chatman (User)
-**Course:** CSC-340-02
-**Version:** 1.0
+**Course:** CSC-340 Section 02
+**Version:** 1.0.1
 **Date:** 2026-02-13
 
 ---
