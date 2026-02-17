@@ -10,12 +10,12 @@
 **Vision.** This app is created for expanding the competitive Super Smash Bros. scene by providing users with the resources to improve at the game, even at a casual level. This app is meant to be for anyone looking to improve at Super Smash Bros and be more involved with its community.
 
 **Glossary** Terms used in the project
-- **Term 1:** Player - The user who plays Super Smash Bros. and is looking for the services this app helps facilitate
+- **Term 1:** Player: The user who is actively playing Super Smash Bros. and is looking for a resource to gain coaching
 - **Term 2:** Coach - The provider who helps teach Super Smash Bros. in order to gift their skills to the future player base
 - **Term 3:** Bio - a summary of the person and their experience with Super Smash Bros. to tell the user more about the coach they might be requesting services from
 
 **Primary Users / Roles.**
-- **Customer (Player)** — Be able to purchase coaching services from providers with the end goal of improving at Super Smash Bros.
+- **Customer (Player)** — Ability to purchase coaching services from providers and choose between different coaching sessions.
 - **Provider (Coach)** Be able to provide coaching services to players interested in improving at Super Smash Bros.
 
 **Scope (this semester).**
@@ -27,6 +27,7 @@
 **Out of scope (deferred).**
 - <deferred 1> international coaching and app usage
 - <deferred 2> time scheduling within the app to speed up the process
+- <deferred 3> ijmplementing different time zones
 
 > This document is **requirements‑level** and solution‑neutral; design decisions (UI layouts, API endpoints, schemas) are documented separately.
 
@@ -36,13 +37,13 @@
 
 ### 2.1 Customer Stories
 - **US‑CUST‑001 — <Account Registration>**  
-  _Story:_ As a customer, I want to sign up for an account so that I can search and pay for coaching sessions
+  _Story:_ As a customer, I want to sign up for/log in to an account so that I can search and pay for coaching sessions, and select the session type that best suits my needs (active session or asynchronous.)
   _Acceptance:_
   ```gherkin
   Scenario: <player creates an account>
-    Given Player does not have an account
+    Upon checking (eventual) database, see that user does not have an account
     When  Proper fields are filled out in the account creation
-    Then  the player's account is created and stored in the system
+    Then  the player's account is created and stored in the system (database).
   ```
 
 - **US‑CUST‑002 — <Browsing>**  
@@ -52,7 +53,7 @@
   Scenario: <player filters through coaching posts and selects a preferrable one>
     Given a player is searching for a coaching session through the app
     When  a coaching session is filtered through and found
-    Then  Player can click on the coaching post in order to purchase it
+    Then  Player can click on the coaching post in order to purchase it, which then notifies the provider through email.
   ```
 
 ### 2.2 Provider Stories
@@ -67,7 +68,7 @@
   ```
 
 - **US‑PROV‑002 — <Review Viewing>>**  
-  _Story:_ As a provider, I want to read and respond to reviews so that my name isn't slandered and I can improve on my coaching and make it better for everyone so I can provide more
+  _Story:_ As a provider, I want to read and respond to reviews so I can refute any potential challenges to the validity of my coaching.
   _Acceptance:_
   ```gherkin
   Scenario: <reviews can be responded to and viewed publicly>
