@@ -1,8 +1,8 @@
 
 # Requirements – Starter Template
 
-**Project Name:** Your App Name \
-**Team:** Names and roles \
+**Project Name:** Smash Bros. Fiverr \
+**Team:** Michael Chatman, Zachary Fouts \
 **Course:** CSC 340\
 **Version:** 1.0\
 **Date:** 2026-01-30
@@ -10,7 +10,7 @@
 ---
 
 ## 1. Overview
-**Vision.** One or two sentences: who this is for, the core problem, and the outcome.
+**Vision.** This is a resource to help Smash Bros. players find coaching to improve their skills.
 
 **Glossary** Terms used in the project
 - **Term 1:** description.
