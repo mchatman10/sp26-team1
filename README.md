@@ -3,7 +3,7 @@ Zachary Fouts
 > Smash Bros. Fiverr
 
 ## Team Members
-> Micael Chatman
+> Michael Chatman
 > Zachary Fouts
 
 ## Description 
