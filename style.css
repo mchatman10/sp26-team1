@@ -1,0 +1,47 @@
+body{
+    background-color: black;
+}
+
+h1{
+    color: white;
+}
+
+aside{
+    color:white;
+}
+
+nav ul {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    width: 100%;
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    justify-content: center;
+    background-color: #333;
+}
+
+nav li {
+  float: left;
+}
+
+nav li a {
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: white;
+    background-color: #333;
+    text-align: center;
+}
+
+nav li a:hover:not(.active) {
+    background-image: radial-gradient(to right, red, orange); /* Change background on hover */
+    color: black;
+}
+
+nav li a.active {
+  background-color: #8b2000;
+}
