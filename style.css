@@ -1,13 +1,13 @@
-body{
+body {
     background-color: black;
 }
 
-h1{
+h1 {
     color: white;
 }
 
-aside{
-    color:white;
+aside {
+    color: white;
 }
 
 nav ul {
@@ -25,7 +25,7 @@ nav ul {
 }
 
 nav li {
-  float: left;
+    float: left;
 }
 
 nav li a {
@@ -38,12 +38,13 @@ nav li a {
 }
 
 nav li a:hover:not(.active) {
-    background-image: radial-gradient(to right, red, orange); /* Change background on hover */
+    background-image: radial-gradient(to right, red, orange);
+    /* Change background on hover */
     color: black;
 }
 
 nav li a.active {
-  background-color: #8b2000;
+    background-color: #8b2000;
 }
 
 * {
@@ -114,7 +115,7 @@ body {
     background-color: #18181b;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     transition: transform 0.2s ease;
 }
 
