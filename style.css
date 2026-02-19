@@ -45,3 +45,120 @@ nav li a:hover:not(.active) {
 nav li a.active {
   background-color: #8b2000;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #0e0e10;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #141417;
+    border-bottom: 1px solid #222;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-link:hover {
+    color: #fff;
+}
+
+.sessions-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+}
+
+.sessions-header h1 {
+    font-size: 32px;
+}
+
+.sort-dropdown {
+    background-color: #1f1f23;
+    color: #fff;
+    border: 1px solid #333;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.sessions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 0 40px 40px;
+}
+
+.session-card {
+    background-color: #18181b;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    transition: transform 0.2s ease;
+}
+
+.session-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+}
+
+.wizzy {
+    background-image: linear-gradient(135deg, #3a3a3a, #5a5a5a);
+}
+
+.ak {
+    background-image: linear-gradient(135deg, #2a2a2a, #444);
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.rating {
+    font-size: 14px;
+    color: #9f9f9f;
+    margin-bottom: 15px;
+}
+
+.bio {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #d1d1d1;
+    margin-bottom: 20px;
+}
+
+.session-info p {
+    font-size: 14px;
+    margin-bottom: 6px;
+}
