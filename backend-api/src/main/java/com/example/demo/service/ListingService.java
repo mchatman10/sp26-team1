@@ -20,4 +20,9 @@ public class ListingService {
     public Listing save(Listing listing) {
         return repo.save(listing);
     }
+    
+    public Listing getListingById(long id)
+    {
+        return repo.findById(id).orElse(null);
+    }
 }
