@@ -10,29 +10,28 @@ public class Listing {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long sessionId;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Games game;
 
     @Column(nullable = false)
     private String experience;
 
-    @Column
     private String mainC;
 
     @Column(nullable = false)
-    private double price;
+    private Double price;
 
     @Column(nullable = false)
     private String sessionType;
 
-    @Column
     private String bio;
 
     public Listing()
     {
 
     }
-    public Listing(Games gam, String expe, String mac, double pri, String sess, String bi)
+    public Listing(Games gam, String expe, String mac, Double pri, String sess, String bi)
     {
         game = gam;
         experience = expe;
@@ -43,7 +42,7 @@ public class Listing {
 
     }
 
-    public void setID(Long ID)
+    public void setSessionId(Long ID)
     {
         sessionId = ID;
     }
@@ -59,7 +58,7 @@ public class Listing {
     {
         mainC = mac;
     }
-    public void setPrice(double pri)
+    public void setPrice(Double pri)
     {
         price = pri;
     }
@@ -72,7 +71,7 @@ public class Listing {
         bio = bi;
     }
 
-    public Long getID()
+    public Long getSessionId()
     {
         return sessionId;
     }
@@ -88,7 +87,7 @@ public class Listing {
     {
         return mainC;
     }
-    public double getPrice()
+    public Double getPrice()
     {
         return price;
     }
