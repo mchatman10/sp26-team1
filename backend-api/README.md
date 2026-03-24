@@ -5,20 +5,6 @@ UML class Diagram:
 
 Customer Management
 
-## Create Customer: POST /customers
-
-# Super Smash Bros Coaching API
-
-## UML Class Diagram
-
-#![alt text](UML.jpg)
-
----
-
-## API Endpoints
-
-### Customer Management
-
 #### Create Customer: POST /customers
 
 ```json
