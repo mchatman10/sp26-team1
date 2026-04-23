@@ -6,7 +6,7 @@ import com.example.demo.model.Booking;
 import com.example.demo.service.BookingService;
 
 @RestController
-@RequestMapping("/bookings")
+@RequestMapping("/api/bookings")
 public class BookingController {
 
     @Autowired
