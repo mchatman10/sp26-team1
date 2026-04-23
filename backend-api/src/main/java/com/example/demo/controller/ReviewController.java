@@ -6,7 +6,7 @@ import com.example.demo.model.Review;
 import com.example.demo.service.ReviewService;
 
 @RestController
-@RequestMapping("/reviews")
+@RequestMapping("/api/reviews")
 public class ReviewController {
 
     @Autowired

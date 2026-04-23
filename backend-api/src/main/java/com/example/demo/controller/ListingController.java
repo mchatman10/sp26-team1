@@ -14,14 +14,14 @@ import com.example.demo.service.ListingService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/listings")
+@RequestMapping("/api/listings")
 public class ListingController {
     @Autowired
     private ListingService service;
 
     @GetMapping
     public List<Listing> getAll() {
-        return service.getAll();
+        return service.getAllListings();
     }
     @GetMapping("/{id}")
     public ResponseEntity<Listing> getListingById(@PathVariable long id)

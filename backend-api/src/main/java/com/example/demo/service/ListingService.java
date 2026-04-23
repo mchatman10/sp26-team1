@@ -13,16 +13,15 @@ public class ListingService {
     @Autowired
     private ListingRepository repo;
 
-    public List<Listing> getAll() {
+    public List<Listing> getAllListings() {
         return repo.findAll();
     }
 
     public Listing save(Listing listing) {
         return repo.save(listing);
     }
-    
-    public Listing getListingById(long id)
-    {
+
+    public Listing getListingById(Long id) {
         return repo.findById(id).orElse(null);
     }
 }
