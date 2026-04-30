@@ -14,4 +14,6 @@ public interface ListingRepository extends JpaRepository<Listing, Long> {
 
     @Query(value = "SELECT s.* FROM listings s WHERE s.price >= ?1", nativeQuery = true)
     List<Listing> findByPrice( Double price);
+
+    Listing findByBio(String bio);
 }

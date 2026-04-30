@@ -13,7 +13,7 @@ import com.example.demo.model.Listing;
 import com.example.demo.service.ListingService;
 import java.util.List;
 
-@RestController
+//@RestController
 @RequestMapping("/listings")
 public class ListingController {
     @Autowired
@@ -39,6 +39,6 @@ public class ListingController {
 
     @PostMapping
     public Listing create(@RequestBody Listing listing) {
-        return service.save(listing);
+        return service.createListing(listing);
     }
 }
