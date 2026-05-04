@@ -25,14 +25,24 @@ public class Listing {
     @Column(nullable = false)
     private String sessionType;
 
+    @Transient
+    private boolean booked;
+
+    public boolean isBooked() {
+        return booked;
+    }
+
+    public void setBooked(boolean booked) {
+        this.booked = booked;
+    }
+
     private String bio;
 
-    public Listing()
-    {
+    public Listing() {
 
     }
-    public Listing(Games gam, String expe, String mac, Double pri, String sess, String bi)
-    {
+
+    public Listing(Games gam, String expe, String mac, Double pri, String sess, String bi) {
         game = gam;
         experience = expe;
         mainC = mac;
@@ -42,61 +52,73 @@ public class Listing {
 
     }
 
-    public void setSessionId(Long ID)
-    {
+    public void setSessionId(Long ID) {
         sessionId = ID;
     }
-    public void setGame(Games gam)
-    {
+
+    public void setGame(Games gam) {
         game = gam;
     }
-    public void setExperience(String expe)
-    {
+
+    public void setExperience(String expe) {
         experience = expe;
     }
-    public void setMainC(String mac)
-    {
+
+    public void setMainC(String mac) {
         mainC = mac;
     }
-    public void setPrice(Double pri)
-    {
+
+    public void setPrice(Double pri) {
         price = pri;
     }
-    public void setSessionType(String sess)
-    {
+
+    public void setSessionType(String sess) {
         sessionType = sess;
     }
-    public void setBio(String bi)
-    {
+
+    public void setBio(String bi) {
         bio = bi;
     }
 
-    public Long getSessionId()
-    {
+    public Long getSessionId() {
         return sessionId;
     }
-    public Games getGame()
-    {
+
+    public Games getGame() {
         return game;
     }
-    public String getExperience()
-    {
+
+    public String getExperience() {
         return experience;
     }
-    public String getMainC()
-    {
+
+    public String getMainC() {
         return mainC;
     }
-    public Double getPrice()
-    {
+
+    public Double getPrice() {
         return price;
     }
-    public String getSessionType()
-    {
+
+    public String getSessionType() {
         return sessionType;
     }
-    public String getBio()
-    {
+
+    public String getBio() {
         return bio;
+    }
+
+    @OneToMany(mappedBy = "listing", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private java.util.List<Review> reviews;
+
+    @Transient
+    private java.util.List<Review> visibleReviews;
+
+    public java.util.List<Review> getVisibleReviews() {
+        return visibleReviews != null ? visibleReviews : reviews;
+    }
+
+    public void setVisibleReviews(java.util.List<Review> visibleReviews) {
+        this.visibleReviews = visibleReviews;
     }
 }
