@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import com.example.demo.model.*;
 import com.example.demo.repository.*;
 
+import java.util.List;
+
 @Service
 public class BookingService {
 
@@ -28,5 +30,13 @@ public class BookingService {
         booking.setStatus("CONFIRMED");
 
         return bookingRepo.save(booking);
+    }
+
+    public Booking saveBooking(Long customerId, Long listingId) {
+        return create(customerId, listingId);
+    }
+
+    public List<Booking> getAllBookings() {
+        return bookingRepo.findAll();
     }
 }
