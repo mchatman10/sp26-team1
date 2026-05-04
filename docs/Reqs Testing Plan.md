@@ -6,7 +6,7 @@
 ## Actors
 - Provider P:
 - Player C:
-- Service S:
+- Service S: Coaching Listing
 
 ## Use Cases
 #### 1. Player: US‑CUST‑001 — Register & manage profile
@@ -16,6 +16,7 @@
 
 #### 2. 
 1. Player C1 views available coaching listings.
+2. Player C1 views pre-existing reviews of coaching listings.
 
 #### 3.
 1. Player C1 purchases a coaching listing. 
