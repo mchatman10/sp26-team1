@@ -47,13 +47,29 @@
   ```
 
 - **US‑CUST‑002 — <Browsing>**  
-  _Story:_ As a customer, I want to browse coaching sessions so that I can purchase one and plan the session through messages
+  _Story:_ As a customer, I want to browse coaching sessions.
+  _Acceptance:_
+  ```gherkin
+  Scenario: <player filters through coaching posts to see which is most appealing>
+    After creating a player account, I can browse coaching listings to decide which one I'd like to purchase.
+  ```
+
+  - **US‑CUST‑003 — <Booking>**  
+  _Story:_ As a customer, I want to be able to purchase a coaching session.
   _Acceptance:_
   ```gherkin
   Scenario: <player filters through coaching posts and selects a preferrable one>
     Given a player is searching for a coaching session through the app
     When  a coaching session is filtered through and found
-    Then  Player can click on the coaching post in order to purchase it, which then notifies the provider through email.
+    Then  Player can click on the coaching post in order to purchase it.
+  ```
+
+- **US‑CUST‑004 — <Review>**  
+  _Story:_ As a customer, I want to be able to write a review of a coaching service.
+  _Acceptance:_
+  ```gherkin
+  Scenario: <player filters through coaching posts and selects a preferrable one>
+    After having purchased and used the coaching service, I make a review of the service out of stars, and can add any additional comments I might have.
   ```
 
 ### 2.2 Provider Stories
