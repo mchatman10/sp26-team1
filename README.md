@@ -16,7 +16,7 @@ Smash Bros. Fiverr is an app where people can share their talents in games in th
     3. Purchase available services - Select based on coaching session type/length
     4. Write reviews for used services - Rate your experience with the coach, with an included description box
 2. Provider (the user with the provider role):
-    1. Create/modify/remove provider profile - Register as a coach
+    1. Create/modify provider profile - Register as a coach
     2. Create services - Post a coaching post with a pay rate and description
-    3. View customer statistics -  view customer reviews
-    4. Reply to reviews - give feedback or clarification to customers by replying to reviews
+    3. Delete service - Delete a coaching post that is no longer being offered
+    4. View customer feedback -  view customer reviews

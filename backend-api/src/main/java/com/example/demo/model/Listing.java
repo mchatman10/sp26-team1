@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import java.util.*;
 import jakarta.persistence.*;
 
 @Entity
@@ -9,6 +10,12 @@ public class Listing {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long sessionId;
+
+    @Column (nullable = false)
+    private Long coachId;
+    
+    @OneToMany(mappedBy = "listing", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Review> reviews;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
@@ -31,8 +38,9 @@ public class Listing {
     {
 
     }
-    public Listing(Games gam, String expe, String mac, Double pri, String sess, String bi)
+    public Listing(Long id, Games gam, String expe, String mac, Double pri, String sess, String bi)
     {
+        coachId = id;
         game = gam;
         experience = expe;
         mainC = mac;
@@ -45,6 +53,10 @@ public class Listing {
     public void setSessionId(Long ID)
     {
         sessionId = ID;
+    }
+    public void setCoachId(Long ID)
+    {
+        coachId = ID;
     }
     public void setGame(Games gam)
     {
@@ -74,6 +86,10 @@ public class Listing {
     public Long getSessionId()
     {
         return sessionId;
+    }
+    public Long getCoachId()
+    {
+        return coachId;
     }
     public Games getGame()
     {
