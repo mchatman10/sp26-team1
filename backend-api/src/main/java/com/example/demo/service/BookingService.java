@@ -39,4 +39,8 @@ public class BookingService {
     public List<Booking> getAllBookings() {
         return bookingRepo.findAll();
     }
+
+    public Booking save(Booking booking) {
+        return bookingRepo.save(booking);
+    }
 }

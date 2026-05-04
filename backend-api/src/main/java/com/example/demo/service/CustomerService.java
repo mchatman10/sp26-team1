@@ -2,6 +2,8 @@ package com.example.demo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 import com.example.demo.model.Customer;
 import com.example.demo.repository.CustomerRepository;
 
@@ -12,6 +14,9 @@ public class CustomerService {
 
     @Autowired
     private CustomerRepository repo;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     public Customer create(Customer c) {
         return repo.save(c);
@@ -38,5 +43,10 @@ public class CustomerService {
 
     public List<Customer> getAll() {
         return repo.findAll();
+    }
+
+    public Customer saveCustomer(Customer customer) {
+        customer.setPassword(passwordEncoder.encode(customer.getPassword()));
+        return repo.save(customer);
     }
 }

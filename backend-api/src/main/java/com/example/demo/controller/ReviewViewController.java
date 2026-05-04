@@ -16,7 +16,6 @@ public class ReviewViewController {
         this.reviewService = reviewService;
     }
 
-    // Show review form
     @GetMapping("/new")
     public String showReviewForm(Model model) {
         model.addAttribute("review", new Review());

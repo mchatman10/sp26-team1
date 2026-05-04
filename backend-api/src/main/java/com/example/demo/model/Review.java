@@ -16,7 +16,11 @@ public class Review {
     private Customer customer;
 
     @ManyToOne
+    @JoinColumn(name = "listing_id")
     private Listing listing;
+
+    @Column(name = "listing_session_id", insertable = false, updatable = false)
+    private Long listingSessionId;
 
     public Long getReviewId() {
         return reviewId;
@@ -52,5 +56,9 @@ public class Review {
 
     public void setListing(Listing listing) {
         this.listing = listing;
+    }
+
+    public Long getListingSessionId() {
+        return listingSessionId;
     }
 }

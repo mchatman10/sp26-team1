@@ -36,8 +36,11 @@ public class ReviewService {
         return reviewRepo.save(review);
     }
 
-    // MVC implementation
     public Review saveReview(Long customerId, Long listingId, Review review) {
         return create(customerId, listingId, review);
+    }
+
+    public Review save(Review review) {
+        return reviewRepo.save(review);
     }
 }

@@ -1,7 +1,11 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.Customer;
+import com.example.demo.repository.CustomerRepository;
 import com.example.demo.service.CustomerService;
+
+import java.security.Principal;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -11,9 +15,12 @@ import org.springframework.web.bind.annotation.*;
 public class CustomerViewController {
 
     private final CustomerService customerService;
+    private final CustomerRepository customerRepository;
 
-    public CustomerViewController(CustomerService customerService) {
+    public CustomerViewController(CustomerService customerService,
+            CustomerRepository customerRepository) {
         this.customerService = customerService;
+        this.customerRepository = customerRepository;
     }
 
     @GetMapping("/{id}")
@@ -46,5 +53,35 @@ public class CustomerViewController {
 
         Customer updated = customerService.update(id, customer);
         return "redirect:/customers/" + updated.getCustomerId();
+    }
+
+    @GetMapping("/profile")
+    public String showProfile(Model model, Principal principal) {
+
+        Customer customer = customerRepository
+                .findByEmail(principal.getName())
+                .orElseThrow();
+
+        model.addAttribute("customer", customer);
+
+        return "profile";
+    }
+
+    @PostMapping("/profile")
+    public String updateProfile(@ModelAttribute Customer updated,
+            Principal principal) {
+
+        Customer customer = customerRepository
+                .findByEmail(principal.getName())
+                .orElseThrow();
+
+        customer.setFname(updated.getFname());
+        customer.setLname(updated.getLname());
+        customer.setEmail(updated.getEmail());
+        customer.setPhone(updated.getPhone());
+
+        customerRepository.save(customer);
+
+        return "redirect:/services";
     }
 }
