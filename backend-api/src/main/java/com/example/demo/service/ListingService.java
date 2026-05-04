@@ -9,8 +9,8 @@ import com.example.demo.repository.ListingRepository;
 import java.util.List;
 
 @Service
-public class ListingService {
-
+public class ListingService 
+{
     @Autowired
     private ListingRepository repo;
     //private static final String UPLOAD_DIR = "src/main/resources/static/pictures/";
@@ -18,6 +18,7 @@ public class ListingService {
     public ListingService(ListingRepository re)
     {
         repo = re;
+    }
     public List<Listing> getAllListings() {
         return repo.findAll();
     }
@@ -32,9 +33,8 @@ public class ListingService {
         return repo.findAll();
     }
     
-    public Listing getListingById(long id)
+    public Listing getListingById(Long id)
     {
-    public Listing getListingById(Long id) {
         return repo.findById(id).orElse(null);
     }
     public List<Listing> getListingByCoachId(long id)
