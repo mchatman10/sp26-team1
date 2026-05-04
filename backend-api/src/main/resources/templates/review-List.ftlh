@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <title>Reviews</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/CSS/style.css" rel="stylesheet">
 </head>
 
 <body>
 
-<nav class="navbar">
-    <div class="logo">Super Smart Bros</div>
+<div class="navbar">
+    <div class="logo">Coach Dashboard</div>
     <ul>
-        <li><a href="/index">Home</a></li>
-        <li><a href="/destination">Menu</a></li>
-        <li><a href="/listings">Listings</a></li>
+        <li><a href="/provider/dashboard/${provider.providerId}">Home</a></li>
+        <li><a href="/provider/update/${provider.providerId}">Edit Profile</a></li>
+        <li><a href="/listings/create/${provider.providerId}">Create a Coaching Post</a></li>
+        <li><a href="/provider">Logout</a></li>
     </ul>
-</nav>
+</div>
 
 <div class="container mt-4">
 
@@ -30,14 +30,12 @@
                     <div class="card-body">
                         <h5 class="card-title">Rating: ${review.rating}/10</h5>
                         <p class="card-text">Comment: ${review.comment}</p>
-                        
-                        <a href="/listings/id/${review.listing.sessionId}" class="btn btn-primary">
-                        View Listing</a>
                     </div>
                 </div> 
             </div>
         </#list>
     </div>
+    <a href="/listings/id/${listing.sessionId}" class="btn-secondary">← Back</a>
 </div>
 
 </body>

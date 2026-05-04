@@ -13,7 +13,7 @@
     <ul>
         <li><a href="/provider/dashboard/${provider.providerId}">Home</a></li>
         <li><a href="/provider/update/${provider.providerId}">Edit Profile</a></li>
-        <li><a href="/listings/create">Create a Coaching Post</a></li>
+        <li><a href="/listings/create/${provider.providerId}">Create a Coaching Post</a></li>
         <li><a href="/provider">Logout</a></li>
     </ul>
 </div>
@@ -21,7 +21,7 @@
     <div class="form-container">
         <h1>Create a Coaching Listing</h1>
 
-        <form action="/listings/create" method="post" class="coaching-form">
+        <form action="/listings/create/${provider.providerId}" method="post" class="coaching-form">
 
     <!-- Game Selection -->
     <div class="form-group">
@@ -30,12 +30,12 @@
         <details class="multi-select">
             <summary>Select Games</summary>
             <div class="checkbox-container">
-                <label><input type="checkbox" name="games" value="OG"> Super Smash Bros.</label>
-                <label><input type="checkbox" name="games" value="Sixty"> Super Smash Bros. 64</label>
-                <label><input type="checkbox" name="games" value="Melee"> Super Smash Bros. Melee</label>
-                <label><input type="checkbox" name="games" value="Brawl"> Super Smash Bros. Brawl</label>
-                <label><input type="checkbox" name="games" value="For"> Super Smash Bros. 4</label>
-                <label><input type="checkbox" name="games" value="Ult"> Super Smash Bros. Ultimate</label>
+                <label><input type="checkbox" name="game" value="OG"> Super Smash Bros.</label>
+                <label><input type="checkbox" name="game" value="Sixty"> Super Smash Bros. 64</label>
+                <label><input type="checkbox" name="game" value="Melee"> Super Smash Bros. Melee</label>
+                <label><input type="checkbox" name="game" value="Brawl"> Super Smash Bros. Brawl</label>
+                <label><input type="checkbox" name="game" value="For"> Super Smash Bros. 4</label>
+                <label><input type="checkbox" name="game" value="Ult"> Super Smash Bros. Ultimate</label>
 </div>
         </details>
     </div>
@@ -63,13 +63,13 @@
     <!-- Price -->
     <div class="form-group">
         <label for="price">Price Rate ($ per hour)</label>
-        <input type="number" id="price" name="price" min="0" required>
+        <input type="number" id="price" name="price" step="0.01" min="0" placeholder="0.00" required>
     </div>
 
     <!-- Session -->
     <div class="form-group">
         <label for="session">Session Type</label>
-        <select id="session" name="session" required>
+        <select id="sessionType" name="sessionType" required>
             <option value="">Select session type</option>
             <option value="vod">VOD Review</option>
             <option value="live">Live Coaching</option>

@@ -9,18 +9,19 @@
 
 <body>
 
-<nav class="navbar">
-    <div class="logo">Super Smart Bros</div>
+<div class="navbar">
+    <div class="logo">Coach Dashboard</div>
     <ul>
-        <li><a href="/index">Home</a></li>
-        <li><a href="/destination">Menu</a></li>
-        <li><a href="/listings">Listings</a></li>
+        <li><a href="/provider/dashboard/${provider.providerId}">Home</a></li>
+        <li><a href="/provider/update/${provider.providerId}">Edit Profile</a></li>
+        <li><a href="/listings/create/${provider.providerId}">Create a Coaching Post</a></li>
+        <li><a href="/provider">Logout</a></li>
     </ul>
-</nav>
+</div>
 
 <div class="details-container">
     <div class="details-hero">
-        <h1>${listing.game}</h1>
+        <h1>${provider.gameUser!"Coach"}</h1>
         <p class="subtitle">Coaching Session Details</p>
     </div>
     <div class="details-card">
@@ -34,17 +35,17 @@
             </div>
 
             <div class="details-box highlight-box">
-                <h2>Coach Bio</h2>
+                <h2>More Info</h2>
                 <p>${listing.bio}</p>
             </div>
         </div>
 
         <div class="button-row">
-            <a href="/listings" class="btn-secondary">← Back</a>
-            <a href="/book/${listing.sessionId}" class="btn-primary">Book Session</a>
+            <a href="/provider/dashboard/${provider.providerId}" class="btn-secondary">← Back</a>
+            <a href="/reviews/listing/id/${listing.sessionId}" class="btn-primary">View Reviews</a>
         </div>
         <div class="button-row">
-            <a href="/reviews/listing/id/${listing.sessionId}" class="btn-primary">View Reviews</a>
+            <a href="/listings/delete/${listing.sessionId}" class="btn-secondary">Delete Coaching Post</a>
         </div>
     </div>
 </div>

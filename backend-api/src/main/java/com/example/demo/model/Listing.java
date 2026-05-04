@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import java.util.*;
 import jakarta.persistence.*;
 
 @Entity
@@ -12,6 +13,9 @@ public class Listing {
 
     @Column (nullable = false)
     private Long coachId;
+    
+    @OneToMany(mappedBy = "listing", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Review> reviews;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)

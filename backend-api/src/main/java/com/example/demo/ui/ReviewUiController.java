@@ -3,6 +3,7 @@ package com.example.demo.ui;
 import com.example.demo.model.Review;
 import com.example.demo.service.ReviewService;
 import com.example.demo.service.ListingService;
+import com.example.demo.service.ProviderService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,8 @@ public class ReviewUiController {
     private ReviewService reviewService;
     @Autowired
     private ListingService listingService;
+    @Autowired
+    private ProviderService providerService;
 
     @GetMapping("/reviews")
 public String getReviews(Model model) {
@@ -28,6 +31,8 @@ public String getReviews(Model model) {
     {
         model.addAttribute("reviews", reviewService.getByListingId(listingId));
         System.out.println(reviewService.getAll());
+        model.addAttribute("provider", providerService.getProviderById(listingService.getListingById(listingId).getCoachId()));
+        model.addAttribute("listing", listingService.getListingById(listingId));
         return "review-List";
     }
 
@@ -45,12 +50,5 @@ public String getReviews(Model model) {
     {
         reviewService.create(listingId, customerId, review);
         return "redirect:/reviews/listing/" + listingId;
-    }
-
-    @GetMapping("/{reviewId}")
-    public String getReview(@PathVariable Long reviewId, Model model) {
-
-        model.addAttribute("review", reviewService.getById(reviewId));
-        return "review-details";
     }
 }
