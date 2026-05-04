@@ -16,7 +16,7 @@
         <li><a href="/provider/dashboard/${provider.providerId}">Home</a></li>
         <li><a href="/provider/update/${provider.providerId}">Edit Profile</a></li>
         <li><a href="/listings/create/${provider.providerId}">Create a Coaching Post</a></li>
-        <li><a href="/provider">Logout</a></li>
+        <li><a href="/provider/login">Logout</a></li>
     </ul>
 </div>
 
