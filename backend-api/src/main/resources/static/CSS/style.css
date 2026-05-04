@@ -509,3 +509,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
+.listings-single > div {
+    flex: 0 0 100%;
+    max-width: 100%;
+}

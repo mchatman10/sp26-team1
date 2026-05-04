@@ -22,7 +22,6 @@
     <h1 class="text-center mb-4">
         Coaching Posts
     </h1>
-
     <div class="row row-cols-1 row-cols-md-3 g-4">
 
         <#list listings as listing>
@@ -30,22 +29,17 @@
                 <div class="card h-100 shadow">
                     <div class="card-body">
                         <h5 class="card-title"></h5>
-                        <p class="card-text">Game: ${listing.game}</h5>
+                        <p class="card-text">Game: ${listing.game}</p>
                         <p class="card-text">Experience Level: ${listing.experience}</p>
                         <p class="card-text">Price: ${listing.price}</p>
                         <p class="card-text">Session Type: ${listing.sessionType}</p>
                         <p class="card-text">${listing.bio}</p>
 
-                        <a href="/listings/id/${listing.sessionId}" class="btn btn-primary">
-                            View Details
-                        </a>
+                        <a href="/listings/id/${listing.sessionId}" class="btn btn-primary">View Details</a>
                     </div>
-
                 </div>
             </div>
         </#list>
-
     </div>
-
 </body>
 </html>

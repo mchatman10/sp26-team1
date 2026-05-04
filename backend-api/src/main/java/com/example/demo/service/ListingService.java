@@ -34,6 +34,10 @@ public class ListingService {
     {
         return repo.findById(id).orElse(null);
     }
+    public List<Listing> getListingByCoachId(long id)
+    {
+        return repo.findByCoachId(id);
+    }
 
     public List<Listing> getListingByGame(Games game)
     {

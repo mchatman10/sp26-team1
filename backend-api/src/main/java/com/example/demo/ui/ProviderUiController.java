@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.model.Provider;
+import com.example.demo.service.ListingService;
 import com.example.demo.service.ProviderService;
 
 @Controller
@@ -17,6 +18,8 @@ import com.example.demo.service.ProviderService;
 public class ProviderUiController {
     @Autowired
     private ProviderService service;
+    @Autowired
+    private ListingService listService;
 
     @GetMapping("")
     public String login(@RequestParam(required = false) Boolean error, Model model)
@@ -38,9 +41,10 @@ public class ProviderUiController {
     }
 
     @GetMapping("/dashboard/{id}")
-    public String hub(Model model,@PathVariable Long id)
+    public String hub(@PathVariable("id") Long id, Model model)
     {
         model.addAttribute("provider", service.getProviderById(id));
+        model.addAttribute("listings", listService.getListingByCoachId(id));
         return "provider-page";
     }
 
