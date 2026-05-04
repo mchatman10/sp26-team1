@@ -21,12 +21,13 @@ public class ProviderUiController {
     @Autowired
     private ListingService listService;
 
-    @GetMapping("")
+    @GetMapping("/login")
     public String login(@RequestParam(required = false) Boolean error, Model model)
     {
         model.addAttribute("error", error);
         return "provider-login";
     }
+
     @PostMapping("/login")
     public String loginProvider(@RequestParam String email, @RequestParam String password, Model model)
     {
@@ -59,9 +60,9 @@ public class ProviderUiController {
     {
         Provider newProvider = service.createProvider(provider);
         if (newProvider != null)
-            return "redirect:/provider";
+            return "redirect:/provider/login";
         else
-            return "redirect:/provider/add?error=true";
+            return "redirect:/provider/login/add?error=true";
     }
 
     @GetMapping("/update/{id}")
