@@ -5,15 +5,15 @@ import org.springframework.web.bind.annotation.*;
 import com.example.demo.model.Review;
 import com.example.demo.service.ReviewService;
 
-//@RestController
-@RequestMapping("/reviews")
+@RestController
+@RequestMapping("/api/reviews")
 public class ReviewController {
 
     @Autowired
     private ReviewService service;
 
-    /*@PostMapping
+    @PostMapping
     public Review create(@RequestParam Long customerId, @RequestParam Long listingId, @RequestBody Review review) {
         return service.create(customerId, listingId, review);
-    }*/
+    }
 }

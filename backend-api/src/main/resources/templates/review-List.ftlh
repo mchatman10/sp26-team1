@@ -17,7 +17,6 @@
         <li><a href="/index">Home</a></li>
         <li><a href="/destination">Menu</a></li>
         <li><a href="/listings">Listings</a></li>
-        <li><a href="/create">Create a Coaching Post</a></li>
     </ul>
 </nav>
 

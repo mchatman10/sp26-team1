@@ -34,7 +34,7 @@ public class ReviewService {
         return reviewRepo.findById(id).orElse(null);
     }
 
-    /*public Review create(Long customerId, Long listingId, Review review) {
+    public Review create(Long customerId, Long listingId, Review review) {
 
         boolean purchased = bookingRepo.findAll().stream()
             .anyMatch(b -> b.getCustomer().getCustomerId().equals(customerId)
@@ -48,5 +48,5 @@ public class ReviewService {
         review.setListing(listingRepo.findById(listingId).orElseThrow());
 
         return reviewRepo.save(review);
-    }*/
+    }
 }

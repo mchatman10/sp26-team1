@@ -38,7 +38,7 @@ nav li a {
 }
 
 nav li a:hover:not(.active) {
-    background-image: radial-gradient(to right, red, orange); /* Change background on hover */
+    background-image: radial-gradient(to right, red, orange);
     color: black;
 }
 

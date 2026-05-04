@@ -31,7 +31,7 @@ public String getReviews(Model model) {
         return "review-List";
     }
 
-    /*@GetMapping("/create/{listingId}")
+    @GetMapping("/create/{listingId}")
     public String showCreateForm(@PathVariable Long listingId, Model model) {
 
         model.addAttribute("listing", listingService.getListingById(listingId));
@@ -41,11 +41,11 @@ public String getReviews(Model model) {
     }
 
     @PostMapping("/create/{listingId}")
-    public String createReview(@PathVariable Long listingId, @ModelAttribute Review review)
+    public String createReview(@PathVariable Long listingId, Long customerId, @ModelAttribute Review review)
     {
-        reviewService.createFromListing(listingId, review);
+        reviewService.create(listingId, customerId, review);
         return "redirect:/reviews/listing/" + listingId;
-    }*/
+    }
 
     @GetMapping("/{reviewId}")
     public String getReview(@PathVariable Long reviewId, Model model) {

@@ -13,8 +13,8 @@ import com.example.demo.model.Listing;
 import com.example.demo.service.ListingService;
 import java.util.List;
 
-//@RestController
-@RequestMapping("/listings")
+@RestController
+@RequestMapping("/api/listings")
 public class ListingController {
     @Autowired
     private ListingService service;

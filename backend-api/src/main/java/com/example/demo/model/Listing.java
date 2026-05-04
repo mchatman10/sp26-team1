@@ -10,6 +10,9 @@ public class Listing {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long sessionId;
 
+    @Column (nullable = false)
+    private Long coachId;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Games game;
@@ -31,8 +34,9 @@ public class Listing {
     {
 
     }
-    public Listing(Games gam, String expe, String mac, Double pri, String sess, String bi)
+    public Listing(Long id, Games gam, String expe, String mac, Double pri, String sess, String bi)
     {
+        coachId = id;
         game = gam;
         experience = expe;
         mainC = mac;
@@ -45,6 +49,10 @@ public class Listing {
     public void setSessionId(Long ID)
     {
         sessionId = ID;
+    }
+    public void setCoachId(Long ID)
+    {
+        coachId = ID;
     }
     public void setGame(Games gam)
     {
@@ -74,6 +82,10 @@ public class Listing {
     public Long getSessionId()
     {
         return sessionId;
+    }
+    public Long getCoachId()
+    {
+        return coachId;
     }
     public Games getGame()
     {

@@ -8,15 +8,15 @@
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">Super Smart Bros</div>
-        <ul>
-            <li><a href="/index">Home</a></li>
-            <li><a href="/destination">Menu</a></li>
-            <li><a href="/listings">Listings</a></li>
-            <li><a href="/create">Create a Coaching Post</a></li>
-        </ul>
-    </nav>
+<div class="navbar">
+    <div class="logo">Coach Dashboard</div>
+    <ul>
+        <li><a href="/provider/dashboard/${provider.providerId}">Home</a></li>
+        <li><a href="/provider/update/${provider.providerId}">Edit Profile</a></li>
+        <li><a href="/listings/create">Create a Coaching Post</a></li>
+        <li><a href="/provider">Logout</a></li>
+    </ul>
+</div>
 
     <div class="form-container">
         <h1>Create a Coaching Listing</h1>
