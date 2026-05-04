@@ -37,16 +37,21 @@ public class ReviewService {
     public Review create(Long customerId, Long listingId, Review review) {
 
         boolean purchased = bookingRepo.findAll().stream()
-            .anyMatch(b -> b.getCustomer().getCustomerId().equals(customerId)
+                .anyMatch(b -> b.getCustomer().getCustomerId().equals(customerId)
                         && b.getListing().getSessionId().equals(listingId));
 
         if (!purchased) {
-            throw new RuntimeException("Customer has not purchased this service");
+            throw new RuntimeException("Customer has not booked this service");
         }
 
         review.setCustomer(customerRepo.findById(customerId).orElseThrow());
         review.setListing(listingRepo.findById(listingId).orElseThrow());
 
         return reviewRepo.save(review);
+    }
+
+    // MVC implementation
+    public Review saveReview(Long customerId, Long listingId, Review review) {
+        return create(customerId, listingId, review);
     }
 }

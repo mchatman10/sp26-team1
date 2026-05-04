@@ -21,7 +21,7 @@ public class ListingController {
 
     @GetMapping
     public List<Listing> getAll() {
-        return service.getAll();
+        return service.getAllListings();
     }
     @GetMapping("/{id}")
     public ResponseEntity<Listing> getListingById(@PathVariable long id)

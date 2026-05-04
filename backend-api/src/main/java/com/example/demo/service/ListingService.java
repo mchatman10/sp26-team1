@@ -18,6 +18,8 @@ public class ListingService {
     public ListingService(ListingRepository re)
     {
         repo = re;
+    public List<Listing> getAllListings() {
+        return repo.findAll();
     }
 
     public Listing createListing(Listing listing)
@@ -32,6 +34,7 @@ public class ListingService {
     
     public Listing getListingById(long id)
     {
+    public Listing getListingById(Long id) {
         return repo.findById(id).orElse(null);
     }
     public List<Listing> getListingByCoachId(long id)
