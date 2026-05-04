@@ -1,5 +1,5 @@
 **Project Name: Super Smart Bros.**   
-**Version:** 
+**Version: 1.0.1** 
 **Date: 5/3/26**  
 **Purpose: Provide a service to coach YOU to get better at competitive Super Smash Bros.** 
 
