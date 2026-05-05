@@ -23,13 +23,13 @@
 #### 4.
 1. Player C1 writes a review for coaching listing.
 
-#### 6. Provider: 
-1.
-2.
+#### 6. Provider: Coach US-PROV-001 - Profile Creation
+1. Coach opens the login page and signs up using the sign up page
+2. Coach logs in and edits profile page to their liking
 
-#### 7. Provider: 
-1.
-2.
+#### 7. Provider: Coach US-PROV-002 - View Reviews
+1. Coach tabs into a listing they've created
+2. Coach views reviews from that page
 
 ## CROSS-CUTTING TEST SCENARIOS (Non-Functional Requirements)
 
@@ -42,12 +42,12 @@
   2. Repeat 10 times
 - **Expected Outcome:** 95% of requests ≤ 1.5 seconds
 
-**Scenario P2:**
-- **Setup:** 
+**Scenario P2:** Dashboard page response time < 1 second
+- **Setup:** Server under typical load
 - **Steps:**
-  1. x
-  2. y
-- **Expected Outcome:** 
+  1. Measure response time for "dashboard" page load with 1 active provider
+  2. repeat 15 times
+- **Expected Outcome:** 98% of requests < 1 second 
 
 ### Security & Privacy Requirements
 
@@ -58,12 +58,11 @@
   2. y
 - **Expected Outcome:** 
 
-**Scenario S2:**
-- **Setup:** 
+**Scenario S2:** Provider Logs in
+- **Setup:** Input email and password
 - **Steps:**
-  1. x
-  2. y
-- **Expected Outcome:**
+  1. User logs in
+- **Expected Outcome:** User won't be granted any access to provider services without being authenticated by the system
 
 ### Usability Requirements
 
