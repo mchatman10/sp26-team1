@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
+@Table(name = "booking")
 public class Booking {
 
     @Id
@@ -11,12 +12,15 @@ public class Booking {
     private Long id;
 
     private String status;
+
     private LocalDate sessionDate;
 
     @ManyToOne
+    @JoinColumn(name = "customer_id")
     private Customer customer;
 
     @ManyToOne
+    @JoinColumn(name = "listing_session_id")
     private Listing listing;
 
     public Long getId() {

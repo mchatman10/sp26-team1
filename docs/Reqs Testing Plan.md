@@ -15,8 +15,7 @@
 3. C1 exists.
 
 #### 2. 
-1. Player C1 views available coaching listings.
-2. Player C1 views pre-existing reviews of coaching listings.
+1. Player C1 views available coaching listings. Player can see any pre-existing reviews of coaching listings. 
 
 #### 3.
 1. Player C1 purchases a coaching listing. 
