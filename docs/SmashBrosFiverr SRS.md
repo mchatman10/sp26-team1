@@ -84,7 +84,7 @@
   ```
 
 - **US‑PROV‑002 — <Review Viewing>>**  
-  _Story:_ As a provider, I want to read and respond to reviews so I can refute any potential challenges to the validity of my coaching.
+  _Story:_ As a provider, I want to read reviews to gain feedback on my coaching
   _Acceptance:_
   ```gherkin
   Scenario: <reviews can be responded to and viewed publicly>
