@@ -21,8 +21,8 @@ Smash Bros. Fiverr is an app where people can share their talents in games in th
     3. Delete service - Delete a coaching post that is no longer being offered
     4. View customer feedback -  view customer reviews
 
-    Controllers are used to handle GET and POST requests made to the server in order to interact with the database and keep the app functioning
-    Services are programs used to handle the business logic side of things. They do most of the programming to facilitate between the Controllers and the Repositories
-    Repositories are used to access the database for the app to get data from
-    Models are the data structure/Java objects used for the database outline and for what data to store and use in each database.
-    The Template Freemarker is the Ui organizer that that helps the java functions interact with the html files and the app function.
+Controllers are used to handle GET and POST requests made to the server in order to interact with the database and keep the app functioning
+Services are programs used to handle the business logic side of things. They do most of the programming to facilitate between the Controllers and the Repositories
+Repositories are used to access the database for the app to get data from
+Models are the data structure/Java objects used for the database outline and for what data to store and use in each database.
+The Template Freemarker is the Ui organizer that that helps the java functions interact with the html files and the app function.
