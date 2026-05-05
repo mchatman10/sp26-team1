@@ -54,15 +54,9 @@
 **Scenario S1:**
 - **Setup:** 
 - **Steps:**
-  1. x
-  2. y
-- **Expected Outcome:** 
-
-**Scenario S2:** Provider Logs in
-- **Setup:** Input email and password
-- **Steps:**
-  1. User logs in
-- **Expected Outcome:** User won't be granted any access to provider services without being authenticated by the system
+  1. User creates an account
+  2. User is authenticated depending on whether they are a customer or provider.
+- **Expected Outcome: User sees different pages depending on who they are authenticated as** 
 
 ### Usability Requirements
 
