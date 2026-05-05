@@ -11,7 +11,10 @@ import java.util.*;
 public interface ListingRepository extends JpaRepository<Listing, Long> {
 
     List<Listing> findByGame(Games game);
+    List<Listing> findByCoachId(Long id);
 
-    @Query(value = "SELECT s.* FROM Listings s WHERE s.price >= ?1", nativeQuery = true)
-    List<Character> findByprice(Double price);
+    @Query(value = "SELECT s.* FROM listings s WHERE s.price >= ?1", nativeQuery = true)
+    List<Listing> findByPrice( Double price);
+
+    Listing findByBio(String bio);
 }

@@ -6,7 +6,7 @@
 ## Actors
 - Provider P:
 - Player C:
-- Service S:
+- Service S: Coaching Listing
 
 ## Use Cases
 #### 1. Player: US‑CUST‑001 — Register & manage profile

@@ -39,6 +39,6 @@ public class ListingController {
 
     @PostMapping
     public Listing create(@RequestBody Listing listing) {
-        return service.save(listing);
+        return service.createListing(listing);
     }
 }
