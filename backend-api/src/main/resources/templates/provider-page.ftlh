@@ -15,7 +15,7 @@
         <li><a href="/provider/dashboard/${provider.providerId}">Home</a></li>
         <li><a href="/provider/update/${provider.providerId}">Edit Profile</a></li>
         <li><a href="/listings/create/${provider.providerId}">Create a Coaching Post</a></li>
-        <li><a href="/provider/login">Logout</a></li>
+        <li><a href="/login">Logout</a></li>
     </ul>
 </div>
 
@@ -59,7 +59,7 @@
         </div>
         <div class="button-row">
             <a href="/provider/update/${provider.providerId}" class="btn-primary">Edit Profile</a>
-            <a href="/provider" class="btn-secondary">Logout</a>
+            <a href="/login" class="btn-secondary">Logout</a>
         </div>
     </div>
 </div>
