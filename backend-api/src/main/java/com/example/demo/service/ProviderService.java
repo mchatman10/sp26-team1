@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.model.Provider;
@@ -11,6 +12,9 @@ import java.util.*;
 public class ProviderService {
     @Autowired
     private ProviderRepository repo;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
     
     public ProviderService(ProviderRepository rep)
     {
@@ -19,6 +23,7 @@ public class ProviderService {
 
     public Provider createProvider(Provider provider)
     {
+        provider.setPassword(passwordEncoder.encode(provider.getPassword()));
         return repo.save(provider);
     }
 
@@ -35,7 +40,7 @@ public class ProviderService {
     public Provider login(String email, String password)
     {
         Provider provider = repo.findByEmail(email);
-        if (provider != null && provider.getPassword().equals(password))
+        if (provider != null && passwordEncoder.matches(password, provider.getPassword()))
             return provider;
         else
             return null;
@@ -45,7 +50,7 @@ public class ProviderService {
         return repo.findById(id)
         .map(account -> {
             account.setEmail(provider.getEmail());
-            account.setPassword(provider.getPassword());
+            account.setPassword(passwordEncoder.encode(provider.getPassword()));
             account.setName(provider.getName());
             account.setGameUser(provider.getGameUser());
             account.setSocials(provider.getSocials());
