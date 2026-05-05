@@ -1,0 +1,343 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1700" viewBox="0 0 2400 1700">
+  <defs>
+    <style>
+      .bg { fill: #f7f7f2; }
+      .title { font: 700 42px Arial, sans-serif; fill: #1b1b1b; }
+      .section { font: 700 26px Arial, sans-serif; fill: #3b2f00; }
+      .class-box { fill: #ffffff; stroke: #2c2c2c; stroke-width: 2.5; rx: 10; }
+      .entity-box { fill: #fff8d8; stroke: #8a6d00; stroke-width: 2.5; rx: 10; }
+      .repo-box { fill: #e9f2ff; stroke: #2d5f9a; stroke-width: 2.5; rx: 10; }
+      .service-box { fill: #ebf8ef; stroke: #2e7d45; stroke-width: 2.5; rx: 10; }
+      .controller-box { fill: #f4ecff; stroke: #6a3d9a; stroke-width: 2.5; rx: 10; }
+      .header { font: 700 21px Arial, sans-serif; fill: #111111; }
+      .stereo { font: 15px Arial, sans-serif; fill: #555555; }
+      .body { font: 17px Consolas, monospace; fill: #222222; }
+      .small { font: 15px Arial, sans-serif; fill: #333333; }
+      .line { stroke: #333333; stroke-width: 2.2; fill: none; }
+      .dep { stroke: #555555; stroke-width: 2; fill: none; stroke-dasharray: 8 7; }
+      .assoc { stroke: #6f5900; stroke-width: 2.5; fill: none; }
+      .note { fill: #fffef6; stroke: #b7a24a; stroke-width: 2; rx: 8; }
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#333333"/>
+    </marker>
+    <marker id="depArrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#555555"/>
+    </marker>
+    <marker id="diamond" markerWidth="16" markerHeight="12" refX="2" refY="6" orient="auto">
+      <path d="M 2 6 L 8 1 L 14 6 L 8 11 z" fill="#fff8d8" stroke="#6f5900" stroke-width="1.5"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="2400" height="1700"/>
+  <text class="title" x="80" y="72">Super Smart Bros Backend API - UML Class Diagram</text>
+  <text class="small" x="80" y="108">Spring Boot MVC/JPA project structure: controllers, services, repositories, and domain entities</text>
+
+  <text class="section" x="80" y="170">Controllers / UI Layer</text>
+  <text class="section" x="80" y="610">Services</text>
+  <text class="section" x="880" y="610">Repositories</text>
+  <text class="section" x="80" y="1010">Domain Model</text>
+
+  <!-- Controllers -->
+  <g transform="translate(80,200)">
+    <rect class="controller-box" width="320" height="210"/>
+    <text class="stereo" x="16" y="28">&lt;&lt;Controller&gt;&gt;</text>
+    <text class="header" x="16" y="58">AuthController</text>
+    <line class="line" x1="0" y1="76" x2="320" y2="76"/>
+    <text class="body" x="16" y="106">+ login()</text>
+    <text class="body" x="16" y="132">+ signupForm()</text>
+    <text class="body" x="16" y="158">+ signup(accountType,...)</text>
+    <text class="small" x="16" y="190">Creates Customer or Provider</text>
+  </g>
+
+  <g transform="translate(430,200)">
+    <rect class="controller-box" width="330" height="210"/>
+    <text class="stereo" x="16" y="28">&lt;&lt;Controller&gt;&gt;</text>
+    <text class="header" x="16" y="58">CustomerViewController</text>
+    <line class="line" x1="0" y1="76" x2="330" y2="76"/>
+    <text class="body" x="16" y="106">+ showProfile()</text>
+    <text class="body" x="16" y="132">+ updateProfile()</text>
+    <text class="body" x="16" y="158">+ saveCustomer()</text>
+    <text class="body" x="16" y="184">+ updateCustomer()</text>
+  </g>
+
+  <g transform="translate(790,200)">
+    <rect class="controller-box" width="330" height="210"/>
+    <text class="stereo" x="16" y="28">&lt;&lt;Controller&gt;&gt;</text>
+    <text class="header" x="16" y="58">ProviderUiController</text>
+    <line class="line" x1="0" y1="76" x2="330" y2="76"/>
+    <text class="body" x="16" y="106">+ loginProvider()</text>
+    <text class="body" x="16" y="132">+ hub(id)</text>
+    <text class="body" x="16" y="158">+ createAccount()</text>
+    <text class="body" x="16" y="184">+ updateProfile()</text>
+  </g>
+
+  <g transform="translate(1150,200)">
+    <rect class="controller-box" width="330" height="210"/>
+    <text class="stereo" x="16" y="28">&lt;&lt;Controller&gt;&gt;</text>
+    <text class="header" x="16" y="58">Listing Controllers</text>
+    <line class="line" x1="0" y1="76" x2="330" y2="76"/>
+    <text class="body" x="16" y="106">ListingController</text>
+    <text class="body" x="16" y="132">ListingViewController</text>
+    <text class="body" x="16" y="158">ListingUiController</text>
+    <text class="small" x="16" y="190">Create, view, delete listings</text>
+  </g>
+
+  <g transform="translate(1510,200)">
+    <rect class="controller-box" width="330" height="210"/>
+    <text class="stereo" x="16" y="28">&lt;&lt;Controller&gt;&gt;</text>
+    <text class="header" x="16" y="58">Booking Controllers</text>
+    <line class="line" x1="0" y1="76" x2="330" y2="76"/>
+    <text class="body" x="16" y="106">BookingController</text>
+    <text class="body" x="16" y="132">BookingViewController</text>
+    <text class="small" x="16" y="164">Create and confirm bookings</text>
+  </g>
+
+  <g transform="translate(1870,200)">
+    <rect class="controller-box" width="330" height="210"/>
+    <text class="stereo" x="16" y="28">&lt;&lt;Controller&gt;&gt;</text>
+    <text class="header" x="16" y="58">Review Controllers</text>
+    <line class="line" x1="0" y1="76" x2="330" y2="76"/>
+    <text class="body" x="16" y="106">ReviewController</text>
+    <text class="body" x="16" y="132">ReviewViewController</text>
+    <text class="body" x="16" y="158">ReviewUiController</text>
+    <text class="small" x="16" y="190">Customer submit, provider view</text>
+  </g>
+
+  <!-- Services -->
+  <g transform="translate(80,640)">
+    <rect class="service-box" width="300" height="190"/>
+    <text class="stereo" x="16" y="28">&lt;&lt;Service&gt;&gt;</text>
+    <text class="header" x="16" y="58">CustomerService</text>
+    <line class="line" x1="0" y1="76" x2="300" y2="76"/>
+    <text class="body" x="16" y="106">+ saveCustomer()</text>
+    <text class="body" x="16" y="132">+ update(id,...)</text>
+    <text class="body" x="16" y="158">+ getAll()</text>
+  </g>
+
+  <g transform="translate(410,640)">
+    <rect class="service-box" width="300" height="190"/>
+    <text class="stereo" x="16" y="28">&lt;&lt;Service&gt;&gt;</text>
+    <text class="header" x="16" y="58">ProviderService</text>
+    <line class="line" x1="0" y1="76" x2="300" y2="76"/>
+    <text class="body" x="16" y="106">+ createProvider()</text>
+    <text class="body" x="16" y="132">+ login()</text>
+    <text class="body" x="16" y="158">+ updateProvider()</text>
+  </g>
+
+  <g transform="translate(740,640)">
+    <rect class="service-box" width="300" height="190"/>
+    <text class="stereo" x="16" y="28">&lt;&lt;Service&gt;&gt;</text>
+    <text class="header" x="16" y="58">ListingService</text>
+    <line class="line" x1="0" y1="76" x2="300" y2="76"/>
+    <text class="body" x="16" y="106">+ createListing()</text>
+    <text class="body" x="16" y="132">+ getListingByCoachId()</text>
+    <text class="body" x="16" y="158">+ updateListing()</text>
+  </g>
+
+  <g transform="translate(1070,640)">
+    <rect class="service-box" width="300" height="190"/>
+    <text class="stereo" x="16" y="28">&lt;&lt;Service&gt;&gt;</text>
+    <text class="header" x="16" y="58">BookingService</text>
+    <line class="line" x1="0" y1="76" x2="300" y2="76"/>
+    <text class="body" x="16" y="106">+ create(customerId,...)</text>
+    <text class="body" x="16" y="132">+ saveBooking()</text>
+    <text class="body" x="16" y="158">+ getAllBookings()</text>
+  </g>
+
+  <g transform="translate(1400,640)">
+    <rect class="service-box" width="300" height="190"/>
+    <text class="stereo" x="16" y="28">&lt;&lt;Service&gt;&gt;</text>
+    <text class="header" x="16" y="58">ReviewService</text>
+    <line class="line" x1="0" y1="76" x2="300" y2="76"/>
+    <text class="body" x="16" y="106">+ create(customerId,...)</text>
+    <text class="body" x="16" y="132">+ getByListingId()</text>
+    <text class="body" x="16" y="158">+ save()</text>
+  </g>
+
+  <g transform="translate(1730,640)">
+    <rect class="service-box" width="360" height="190"/>
+    <text class="stereo" x="16" y="28">&lt;&lt;UserDetailsService&gt;&gt;</text>
+    <text class="header" x="16" y="58">CustomUserDetailsService</text>
+    <line class="line" x1="0" y1="76" x2="360" y2="76"/>
+    <text class="body" x="16" y="106">+ loadUserByUsername(email)</text>
+    <text class="small" x="16" y="140">Loads Customer or Provider</text>
+    <text class="small" x="16" y="166">ROLE_CUSTOMER / ROLE_PROVIDER</text>
+  </g>
+
+  <!-- Repositories -->
+  <g transform="translate(880,875)">
+    <rect class="repo-box" width="285" height="165"/>
+    <text class="stereo" x="16" y="28">&lt;&lt;Repository&gt;&gt;</text>
+    <text class="header" x="16" y="58">CustomerRepository</text>
+    <line class="line" x1="0" y1="76" x2="285" y2="76"/>
+    <text class="body" x="16" y="106">JpaRepository&lt;Customer,Long&gt;</text>
+    <text class="body" x="16" y="132">+ findByEmail()</text>
+  </g>
+
+  <g transform="translate(1195,875)">
+    <rect class="repo-box" width="285" height="165"/>
+    <text class="stereo" x="16" y="28">&lt;&lt;Repository&gt;&gt;</text>
+    <text class="header" x="16" y="58">ProviderRepository</text>
+    <line class="line" x1="0" y1="76" x2="285" y2="76"/>
+    <text class="body" x="16" y="106">JpaRepository&lt;Provider,Long&gt;</text>
+    <text class="body" x="16" y="132">+ findByEmail()</text>
+  </g>
+
+  <g transform="translate(1510,875)">
+    <rect class="repo-box" width="300" height="190"/>
+    <text class="stereo" x="16" y="28">&lt;&lt;Repository&gt;&gt;</text>
+    <text class="header" x="16" y="58">ListingRepository</text>
+    <line class="line" x1="0" y1="76" x2="300" y2="76"/>
+    <text class="body" x="16" y="106">JpaRepository&lt;Listing,Long&gt;</text>
+    <text class="body" x="16" y="132">+ findByCoachId()</text>
+    <text class="body" x="16" y="158">+ findByGame()</text>
+  </g>
+
+  <g transform="translate(1840,875)">
+    <rect class="repo-box" width="300" height="190"/>
+    <text class="stereo" x="16" y="28">&lt;&lt;Repository&gt;&gt;</text>
+    <text class="header" x="16" y="58">ReviewRepository</text>
+    <line class="line" x1="0" y1="76" x2="300" y2="76"/>
+    <text class="body" x="16" y="106">JpaRepository&lt;Review,Long&gt;</text>
+    <text class="body" x="16" y="132">+ findForListing()</text>
+    <text class="body" x="16" y="158">+ findByListingSessionId()</text>
+  </g>
+
+  <g transform="translate(2165,875)">
+    <rect class="repo-box" width="190" height="165"/>
+    <text class="stereo" x="16" y="28">&lt;&lt;Repository&gt;&gt;</text>
+    <text class="header" x="16" y="58">BookingRepository</text>
+    <line class="line" x1="0" y1="76" x2="190" y2="76"/>
+    <text class="body" x="16" y="106">JpaRepository</text>
+    <text class="body" x="16" y="132">&lt;Booking,Long&gt;</text>
+  </g>
+
+  <!-- Domain Model -->
+  <g transform="translate(80,1040)">
+    <rect class="entity-box" width="340" height="255"/>
+    <text class="stereo" x="16" y="28">&lt;&lt;Entity&gt;&gt;</text>
+    <text class="header" x="16" y="58">Customer</text>
+    <line class="line" x1="0" y1="76" x2="340" y2="76"/>
+    <text class="body" x="16" y="106">- customerId: Long</text>
+    <text class="body" x="16" y="132">- fname: String</text>
+    <text class="body" x="16" y="158">- lname: String</text>
+    <text class="body" x="16" y="184">- email: String</text>
+    <text class="body" x="16" y="210">- password: String</text>
+    <text class="body" x="16" y="236">- phone: String</text>
+  </g>
+
+  <g transform="translate(470,1040)">
+    <rect class="entity-box" width="340" height="255"/>
+    <text class="stereo" x="16" y="28">&lt;&lt;Entity&gt;&gt;</text>
+    <text class="header" x="16" y="58">Provider</text>
+    <line class="line" x1="0" y1="76" x2="340" y2="76"/>
+    <text class="body" x="16" y="106">- providerId: Long</text>
+    <text class="body" x="16" y="132">- email: String</text>
+    <text class="body" x="16" y="158">- password: String</text>
+    <text class="body" x="16" y="184">- name: String</text>
+    <text class="body" x="16" y="210">- gameUser: String</text>
+    <text class="body" x="16" y="236">- bio/socials: String</text>
+  </g>
+
+  <g transform="translate(860,1040)">
+    <rect class="entity-box" width="360" height="280"/>
+    <text class="stereo" x="16" y="28">&lt;&lt;Entity&gt;&gt;</text>
+    <text class="header" x="16" y="58">Listing</text>
+    <line class="line" x1="0" y1="76" x2="360" y2="76"/>
+    <text class="body" x="16" y="106">- sessionId: Long</text>
+    <text class="body" x="16" y="132">- coachId: Long</text>
+    <text class="body" x="16" y="158">- game: Games</text>
+    <text class="body" x="16" y="184">- experience: String</text>
+    <text class="body" x="16" y="210">- mainC: String</text>
+    <text class="body" x="16" y="236">- price: Double</text>
+    <text class="body" x="16" y="262">- sessionType/bio: String</text>
+  </g>
+
+  <g transform="translate(1280,1040)">
+    <rect class="entity-box" width="350" height="230"/>
+    <text class="stereo" x="16" y="28">&lt;&lt;Entity&gt;&gt;</text>
+    <text class="header" x="16" y="58">Booking</text>
+    <line class="line" x1="0" y1="76" x2="350" y2="76"/>
+    <text class="body" x="16" y="106">- id: Long</text>
+    <text class="body" x="16" y="132">- status: String</text>
+    <text class="body" x="16" y="158">- sessionDate: LocalDate</text>
+    <text class="body" x="16" y="184">- customer: Customer</text>
+    <text class="body" x="16" y="210">- listing: Listing</text>
+  </g>
+
+  <g transform="translate(1690,1040)">
+    <rect class="entity-box" width="350" height="230"/>
+    <text class="stereo" x="16" y="28">&lt;&lt;Entity&gt;&gt;</text>
+    <text class="header" x="16" y="58">Review</text>
+    <line class="line" x1="0" y1="76" x2="350" y2="76"/>
+    <text class="body" x="16" y="106">- reviewId: Long</text>
+    <text class="body" x="16" y="132">- rating: int</text>
+    <text class="body" x="16" y="158">- comment: String</text>
+    <text class="body" x="16" y="184">- customer: Customer</text>
+    <text class="body" x="16" y="210">- listing: Listing</text>
+  </g>
+
+  <g transform="translate(860,1390)">
+    <rect class="entity-box" width="360" height="160"/>
+    <text class="stereo" x="16" y="28">&lt;&lt;Enum&gt;&gt;</text>
+    <text class="header" x="16" y="58">Games</text>
+    <line class="line" x1="0" y1="76" x2="360" y2="76"/>
+    <text class="body" x="16" y="106">OG, Sixty, Melee</text>
+    <text class="body" x="16" y="132">Brawl, For, Ult</text>
+  </g>
+
+  <g transform="translate(80,1375)">
+    <rect class="note" width="520" height="190"/>
+    <text class="header" x="18" y="40">Authentication Note</text>
+    <text class="small" x="18" y="78">SecurityConfig uses CustomUserDetailsService.</text>
+    <text class="small" x="18" y="108">The same /login route authenticates customers</text>
+    <text class="small" x="18" y="138">and providers, then redirects by role.</text>
+    <text class="small" x="18" y="168">Provider dashboard route: /provider/dashboard/{id}</text>
+  </g>
+
+  <!-- Entity associations -->
+  <path class="assoc" marker-start="url(#diamond)" marker-end="url(#arrow)" d="M 420 1168 C 610 1168, 1080 1110, 1280 1120"/>
+  <text class="small" x="610" y="1148">1 customer</text>
+  <text class="small" x="1190" y="1100">0..* bookings</text>
+
+  <path class="assoc" marker-start="url(#diamond)" marker-end="url(#arrow)" d="M 1220 1165 C 1260 1165, 1240 1160, 1280 1160"/>
+  <text class="small" x="1228" y="1150">1 listing</text>
+
+  <path class="assoc" marker-start="url(#diamond)" marker-end="url(#arrow)" d="M 420 1238 C 760 1375, 1380 1288, 1690 1165"/>
+  <text class="small" x="570" y="1322">1 customer</text>
+  <text class="small" x="1580" y="1188">0..* reviews</text>
+
+  <path class="assoc" marker-start="url(#diamond)" marker-end="url(#arrow)" d="M 1220 1210 C 1385 1210, 1510 1210, 1690 1210"/>
+  <text class="small" x="1370" y="1190">1 listing</text>
+
+  <path class="assoc" marker-end="url(#arrow)" d="M 810 1165 C 830 1165, 840 1165, 860 1165"/>
+  <text class="small" x="812" y="1146">coachId</text>
+
+  <path class="assoc" marker-end="url(#arrow)" d="M 1040 1320 C 1040 1348, 1040 1362, 1040 1390"/>
+  <text class="small" x="1050" y="1360">game</text>
+
+  <!-- Service to repository dependencies -->
+  <path class="dep" marker-end="url(#depArrow)" d="M 230 830 C 410 900, 680 945, 880 955"/>
+  <path class="dep" marker-end="url(#depArrow)" d="M 560 830 C 750 895, 1020 930, 1195 955"/>
+  <path class="dep" marker-end="url(#depArrow)" d="M 890 830 C 1090 890, 1340 920, 1510 960"/>
+  <path class="dep" marker-end="url(#depArrow)" d="M 1220 830 C 1440 900, 1850 940, 2165 955"/>
+  <path class="dep" marker-end="url(#depArrow)" d="M 1550 830 C 1650 890, 1750 925, 1840 960"/>
+  <path class="dep" marker-end="url(#depArrow)" d="M 1890 830 C 1740 880, 1430 900, 1195 945"/>
+  <path class="dep" marker-end="url(#depArrow)" d="M 1910 830 C 1730 875, 1240 880, 880 930"/>
+
+  <!-- Controller to service dependencies -->
+  <path class="dep" marker-end="url(#depArrow)" d="M 240 410 C 240 500, 230 565, 230 640"/>
+  <path class="dep" marker-end="url(#depArrow)" d="M 595 410 C 520 500, 310 560, 230 640"/>
+  <path class="dep" marker-end="url(#depArrow)" d="M 955 410 C 875 520, 640 555, 560 640"/>
+  <path class="dep" marker-end="url(#depArrow)" d="M 1315 410 C 1160 500, 990 555, 890 640"/>
+  <path class="dep" marker-end="url(#depArrow)" d="M 1675 410 C 1520 505, 1320 555, 1220 640"/>
+  <path class="dep" marker-end="url(#depArrow)" d="M 2035 410 C 1900 505, 1640 555, 1550 640"/>
+
+  <!-- Repository to entity dependencies -->
+  <path class="dep" marker-end="url(#depArrow)" d="M 990 1040 C 800 1100, 610 1120, 420 1160"/>
+  <path class="dep" marker-end="url(#depArrow)" d="M 1338 1040 C 1130 1095, 1000 1118, 810 1160"/>
+  <path class="dep" marker-end="url(#depArrow)" d="M 1660 1065 C 1450 1110, 1320 1130, 1220 1160"/>
+  <path class="dep" marker-end="url(#depArrow)" d="M 1990 1065 C 1920 1090, 1840 1115, 1690 1160"/>
+  <path class="dep" marker-end="url(#depArrow)" d="M 2260 1040 C 2020 1110, 1780 1140, 1630 1160"/>
+</svg>

@@ -1,5 +1,5 @@
 UML class Diagram:
-#![alt text](UML.jpg)
+#![alt text](uml-class-diagram.svg)
 
 ## API Endpoints
 

@@ -37,11 +37,11 @@
 
 ### 2.1 Customer Stories
 - **US‑CUST‑001 — <Account Registration>**  
-  _Story:_ As a customer, I want to sign up for/log in to an account so that I can search and pay for coaching sessions, and select the session type that best suits my needs (active session or asynchronous.)
+  _Story:_ As a customer, I want to sign up for/log in to an account so that I can search and pay for coaching sessions, and select the session type that best suits my needs.
   _Acceptance:_
   ```gherkin
   Scenario: <player creates an account>
-    Upon checking (eventual) database, see that user does not have an account
+    Upon checking database, see that user does not have an account
     When  Proper fields are filled out in the account creation
     Then  the player's account is created and stored in the system (database).
   ```
