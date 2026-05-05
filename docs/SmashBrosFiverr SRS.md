@@ -87,10 +87,30 @@
   _Story:_ As a provider, I want to read reviews to gain feedback on my coaching
   _Acceptance:_
   ```gherkin
-  Scenario: <reviews can be responded to and viewed publicly>
+  Scenario: <reviews can be read to by the provider>
     Given a user posts a review on a coach's profile
     When  the review is posted
-    Then  I can see and/or respond to the review to provide more insight on said review
+    Then  I can see the review and read it
+  ```
+
+  - **US‑PROV‑003 — <Coaching Post>>**  
+  _Story:_ As a provider, I want to post a coaching post to put myself on the app
+  _Acceptance:_
+  ```gherkin
+  Scenario: <Coaches can post coaching posts for customers to view>
+    Given a coaching post is not created
+    When  the user posts a coaching post
+    Then  Customers can see the coaching post and the coach can manage it
+  ```
+
+  - **US‑PROV‑004 — <Delete Coaching Post>>**  
+  _Story:_ As a provider, I want to be able to remove any coaching posts I put out
+  _Acceptance:_
+  ```gherkin
+  Scenario: <Coaching post can be deleted>
+    Given a coach has an existing coaching post
+    When  the coaching post is deleted
+    Then  the user can no longer see the coaching post on the app
   ```
 
 ## 3. Non‑Functional Requirements (make them measurable)
