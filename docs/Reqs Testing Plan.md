@@ -73,9 +73,9 @@
   2. y
 - **Expected Outcome:** 
 
-**Scenario U2:**
-- **Setup:** 
+**Scenario U2:** Coach creates a coaching post
+- **Setup:** coaching post form
 - **Steps:**
-  1. x
-  2. y
-- **Expected Outcome:** 
+  1. Coaching post form is filled out
+  2. coach presses submit
+- **Expected Outcome:** web page redirects to details on the posting with no other redirection
