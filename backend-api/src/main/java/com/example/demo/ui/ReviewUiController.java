@@ -30,7 +30,6 @@ public String getReviews(Model model) {
     public String getReviewsByPost(@PathVariable("id") Long listingId, Model model)
     {
         model.addAttribute("reviews", reviewService.getByListingId(listingId));
-        System.out.println(reviewService.getAll());
         model.addAttribute("provider", providerService.getProviderById(listingService.getListingById(listingId).getCoachId()));
         model.addAttribute("listing", listingService.getListingById(listingId));
         return "review-List";

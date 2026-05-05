@@ -27,7 +27,7 @@ public class ReviewService {
     }
     public List<Review> getByListingId(Long listingId)
     {
-        return reviewRepo.findByListingSessionId(listingId);
+        return reviewRepo.findForListing(listingId);
     }
     public Review getById(Long id)
     {

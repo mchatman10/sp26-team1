@@ -24,16 +24,22 @@
 
     <h1 class="text-center mb-4">Reviews</h1>
     <div class="row row-cols-1 row-cols-md-3 g-4">
-        <#list reviews as review>
-            <div class="col">
-                <div class="card h-100 shadow">
-                    <div class="card-body">
-                        <h5 class="card-title">Rating: ${review.rating}/10</h5>
-                        <p class="card-text">Comment: ${review.comment}</p>
+        <#if reviews?? && (reviews?size > 0)>
+            <#list reviews as review>
+                <div class="col">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">Rating: ${review.rating}/10</h5>
+                            <p class="card-text">Comment: ${review.comment}</p>
+                        </div>
                     </div>
-                </div> 
+                </div>
+            </#list>
+        <#else>
+            <div class="col-12">
+                <p class="text-center">No reviews yet</p>
             </div>
-        </#list>
+        </#if>
     </div>
     <a href="/listings/id/${listing.sessionId}" class="btn-secondary">← Back</a>
 </div>
