@@ -14,7 +14,7 @@ public class Listing {
     @Column (nullable = false)
     private Long coachId;
     
-    @OneToMany(mappedBy = "listing", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "listing", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Review> reviews;
 
     @Enumerated(EnumType.STRING)
@@ -48,9 +48,6 @@ public class Listing {
     public Listing() {
 
     }
-    public Listing(Long id, Games gam, String expe, String mac, Double pri, String sess, String bi)
-    {
-        coachId = id;
 
     public Listing(Games gam, String expe, String mac, Double pri, String sess, String bi) {
         game = gam;
@@ -59,7 +56,6 @@ public class Listing {
         price = pri;
         sessionType = sess;
         bio = bi;
-
     }
 
     public void setSessionId(Long ID) {
@@ -69,8 +65,6 @@ public class Listing {
     {
         coachId = ID;
     }
-    public void setGame(Games gam)
-    {
 
     public void setGame(Games gam) {
         game = gam;
@@ -103,8 +97,6 @@ public class Listing {
     {
         return coachId;
     }
-    public Games getGame()
-    {
 
     public Games getGame() {
         return game;
@@ -129,9 +121,6 @@ public class Listing {
     public String getBio() {
         return bio;
     }
-
-    @OneToMany(mappedBy = "listing", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private java.util.List<Review> reviews;
 
     @Transient
     private java.util.List<Review> visibleReviews;
